@@ -1,0 +1,16 @@
+class Solution {
+    public boolean hasSameDigits(String s) {
+        StringBuilder sb=new StringBuilder(s);
+        while(sb.length()!=2){
+            StringBuilder temp=new StringBuilder();
+            for(int i=0;i<sb.length()-1;i++){
+                int num1=sb.charAt(i);
+                int num2=sb.charAt(i+1);
+                int sum=(num1+num2)%10;
+                temp.append(sum);
+            }
+            sb=temp;
+        }
+        return sb.charAt(0)==sb.charAt(1);
+    }
+}
